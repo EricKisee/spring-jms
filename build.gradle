@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.10.RELEASE'
+		springBootVersion = '2.7.1'
 	}
 	repositories {
 		mavenCentral()
@@ -13,8 +13,9 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
-group = 'com.mdrsolutions'
+group = 'eric'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -24,9 +25,9 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	compile("org.springframework.boot:spring-boot-starter-activemq")
-	compile("org.apache.activemq:activemq-broker")
-	compile("com.fasterxml.jackson.core:jackson-databind")
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.boot:spring-boot-starter')
+	implementation("org.springframework.boot:spring-boot-starter-activemq")
+	implementation("org.apache.activemq:activemq-broker")
+	implementation("com.fasterxml.jackson.core:jackson-databind")
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
