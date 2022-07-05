@@ -47,6 +47,7 @@ public class Application {
 	public DefaultJmsListenerContainerFactory jmsListenerContainerFactory () {
 		DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
 		factory.setConnectionFactory(connectionFactory());
+		factory.setConcurrency("1-1");
 		return factory;
 	}
 
